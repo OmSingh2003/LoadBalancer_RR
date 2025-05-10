@@ -5,29 +5,8 @@ import (
 	"net/http/httputil"
 	"net/url"
 	"os"
-	"load_balancer/src/handleErr"
+	
+	"github.com/OmSingh2003/LoadBalancer_RR/src"
 )
-
-type simpleServer struct {
-	addr  string
-	proxy *httputil.ReverseProxy 
-}
-
-func newSimpleServer(addr string) *simpleServer {
-	serverURL, err := url.Parse(addr)
-	handleErr(err)
-
-	return &simpleServer{
-		addr:  addr,
-		proxy: httputil.NewSingleHostReverseProxy(serverURL),
-	}
-}
-
-func handleErr(err error) {
-	if err != nil {
-		fmt.Printf("error: %v\n", err)
-		os.Exit(1)
-	}
-}
 
 
