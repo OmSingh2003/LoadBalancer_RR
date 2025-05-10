@@ -5,6 +5,7 @@ import (
 	"net/http/httputil"
 	"net/url"
 	"os"
+	"load_balancer/src/handleErr"
 )
 
 type simpleServer struct {
@@ -28,4 +29,5 @@ func handleErr(err error) {
 		os.Exit(1)
 	}
 }
+
 
