@@ -7,3 +7,10 @@ type loadBalancer struct {
 	roundRobinCount int 
 	servers []Servers 
 }
+func new loadBalancer( port string ,  servers []Servers) {
+	 return &loadBalancer{
+		roundRobinCount : 0
+		 port : port 
+		servers : servers
+	}
+}
